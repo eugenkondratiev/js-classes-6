@@ -1,20 +1,35 @@
-//task 5.6 reduce c  умножением 
+//task 6.6 
+
+const fifthElements = document.getElementsByName('five'); 
 
 
-function multiplyAll(...numbers) {
-    let mult = 1;
- //       numbers.forEach(function(num){ return mult *= num});
-        numbers.forEach(num => mult *= num);
-    return mult;
- } 
 
- console.log(multiplyAll(1, 2, 3, 4, 5));
+function makeFiveHolidayOrange(){
+    for(let elem = 0; elem <fifthElements.length;elem++){
+
+        fifthElements.item(elem).style.color = "orange";
+    }
+}
 
 
-function multiplyAllReduced(...numbers) {
-    return numbers.reduce((acc, num) => acc * num);
- } 
 
- console.log(multiplyAllReduced(1, 2, 3, 4, 5));
+
+
+
+
+
+
+
+
+
+
+
+const act = document.createElement("button");
+act.addEventListener('click', makeFiveHolidayOrange);
+act.style.width = "88px";
+act.style.height = "44px";
+act.textContent = "Press me";
+const lastDiv = document.getElementsByTagName('div');
+lastDiv[lastDiv.length -1].appendChild(act);
 
 
