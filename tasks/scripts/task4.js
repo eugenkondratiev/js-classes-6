@@ -1,23 +1,22 @@
 ﻿//task 6.4
-const secondElements = document.getElementsByClassName('two');
-/*
-console.log( secondElements.item(0));
-console.log( secondElements.item(0).style.fontSize);
-*/
+let secondElements = document.getElementsByClassName('two');
 
-function increaseFont(){
-    for(let elem = 0; elem <secondElements.length;elem++){
-
-        secondElements[elem].style.fontSize = "30px";
+function increaseChildrenFontsFont(elementsCollection){
+    for(let elem = 0; elem < elementsCollection.length; elem++){
+        elementsCollection[elem].style.fontSize = "30px";
     }
+    return elementsCollection;
 }
 
 
 const act = document.createElement("button");
-act.addEventListener('click', increaseFont);
-act.style.width = "88px";
-act.style.height = "44px";
-act.textContent = "Press me";
+act.addEventListener('click', function(){
+    secondElements = increaseChildrenFontsFont(secondElements);
+});
+act.className = "actionButton";
+ act.textContent = "Press me";
+
+
 const lastDiv = document.getElementsByTagName('div');
 lastDiv[lastDiv.length -1].appendChild(act);
 
